@@ -13,25 +13,21 @@ export default function ContactSection() {
               name="name"
               placeholder="Your Name"
               className="w-full px-4 py-3 border border-gray-300 text-[#B8CFCE] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              disabled
             />
             <input
               type="email"
               name="email"
               placeholder="Your Email"
               className="w-full px-4 py-3 border border-gray-300 text-[#B8CFCE] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              disabled
             />
             <textarea
               name="message"
               placeholder="Your Message"
               rows="5"
               className="w-full px-4 py-3 border border-gray-300 text-[#B8CFCE] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              disabled
             ></textarea>
             <button
               className="w-full border-gray-400 text-[#B8CFCE] py-3 px-6 rounded-md cursor-not-allowed"
-              disabled
             >
               Submit
             </button>
@@ -40,11 +36,11 @@ export default function ContactSection() {
           <div className="text-[#B8CFCE] space-y-6">
             <div className="bg-white shadow-md p-6 rounded-md flex items-center gap-4">
               <FaEnvelope className="text-[#B8CFCE] text-xl" />
-              <span>youremail@example.com</span>
+              <span>sayannath441@gmail.com</span>
             </div>
             <div className="bg-white shadow-md p-6 rounded-md flex items-center gap-4">
               <FaPhone className="text-[#B8CFCE] text-xl" />
-              <span>+91 12345 67890</span>
+              <span>+91 9735957286</span>
             </div>
             <div className="bg-white shadow-md p-6 rounded-md flex items-center gap-4">
               <FaMapMarkerAlt className="text-[#B8CFCE] text-xl" />
@@ -52,13 +48,13 @@ export default function ContactSection() {
             </div>
             <div className="bg-white shadow-md p-6 rounded-md flex items-center gap-4">
               <FaLinkedin className="text-[#B8CFCE] text-xl" />
-              <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:underline">
+              <a href="https://www.linkedin.com/in/sayannath441/" target="_blank" rel="noopener noreferrer" className="hover:underline">
                 LinkedIn
               </a>
             </div>
             <div className="bg-white shadow-md p-6 rounded-md flex items-center gap-4">
               <FaGithub className="text-[#B8CFCE] text-xl" />
-              <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:underline">
+              <a href="https://github.com/iamsayannath" target="_blank" rel="noopener noreferrer" className="hover:underline">
                 GitHub
               </a>
             </div>
