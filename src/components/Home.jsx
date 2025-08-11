@@ -2,7 +2,7 @@
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { FiDownload } from 'react-icons/fi';
 import { Typewriter } from 'react-simple-typewriter';
-import profilePic from "../../public/assets/IMG_20241223_003300.jpg";
+import profilePic from "/assets/IMG_20241223_003300.jpg";
 
 export default function HomeSection() {
   return (
