@@ -1,38 +1,111 @@
-import React from 'react';
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 export default function ContactSection() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs
+      .send(
+        'service_caxu2i9', // from EmailJS
+        'template_5usk8b3', // from EmailJS
+        formData,
+        '76gsofb5atyU6i6zt' // from EmailJS
+      )
+      .then(
+        () => {
+          alert('Message sent successfully!');
+          setFormData({ name: '', email: '', message: '' });
+          setLoading(false);
+        },
+        (error) => {
+          alert('Failed to send message. Try again.');
+          console.error(error);
+          setLoading(false);
+        }
+      );
+  };
+
   return (
     <section id="contact" className="py-20 bg-[#333446] px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center text-[#B8CFCE] mb-12">Get In Touch</h2>
         <div className="grid md:grid-cols-2 gap-10 items-start">
-          <div className="bg-white shadow-lg p-8 rounded-lg space-y-6">
+
+          {/* Contact Form */}
+          <form
+            onSubmit={handleSubmit}
+            className="bg-white shadow-lg p-8 rounded-lg space-y-6"
+          >
             <input
               type="text"
               name="name"
               placeholder="Your Name"
-              className="w-full px-4 py-3 border border-gray-300 text-[#B8CFCE] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
             />
             <input
               type="email"
               name="email"
               placeholder="Your Email"
-              className="w-full px-4 py-3 border border-gray-300 text-[#B8CFCE] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
             />
             <textarea
               name="message"
               placeholder="Your Message"
               rows="5"
-              className="w-full px-4 py-3 border border-gray-300 text-[#B8CFCE] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={formData.message}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
             ></textarea>
             <button
-              className="w-full border-gray-400 text-[#B8CFCE] py-3 px-6 rounded-md cursor-not-allowed"
+              type="submit"
+              className={`w-full flex justify-center items-center gap-2 bg-[#B8CFCE] text-[#333446] py-3 px-6 rounded-md transition ${loading ? 'opacity-70 cursor-wait' : 'hover:bg-[#a0b9b8]'
+                }`}
+              disabled={loading}
             >
-              Submit
+              {loading && (
+                <svg
+                  className="animate-spin h-5 w-5 text-[#333446]"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v8H4z"
+                  ></path>
+                </svg>
+              )}
+              {loading ? 'Sending...' : 'Submit'}
             </button>
-          </div>
+          </form>
 
+          {/* Contact Details */}
           <div className="text-[#B8CFCE] space-y-6">
             <div className="bg-white shadow-md p-6 rounded-md flex items-center gap-4">
               <FaEnvelope className="text-[#B8CFCE] text-xl" />
@@ -59,6 +132,7 @@ export default function ContactSection() {
               </a>
             </div>
           </div>
+
         </div>
       </div>
     </section>
