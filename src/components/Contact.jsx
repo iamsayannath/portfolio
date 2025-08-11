@@ -75,9 +75,7 @@ export default function ContactSection() {
             ></textarea>
             <button
               type="submit"
-              className={`w-full flex justify-center items-center gap-2 bg-[#B8CFCE] text-[#333446] py-3 px-6 rounded-md transition ${loading ? 'opacity-70 cursor-wait' : 'hover:bg-[#a0b9b8]'
-                }`}
-              disabled={loading}
+              className={`w-full flex justify-center items-center gap-2 bg-[#B8CFCE] text-black py-3 px-6 rounded-md transition $`}
             >
               {loading ? 'Sending...' : 'Submit'}
             </button>
