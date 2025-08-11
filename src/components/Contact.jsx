@@ -75,7 +75,7 @@ export default function ContactSection() {
             ></textarea>
             <button
               type="submit"
-              className={`w-full flex justify-center items-center gap-2 bg-[#B8CFCE] text-white border-2 border-amber-50 py-3 px-6 rounded-md transition $`}
+              className="bg-[#B8CFCE] text-white border-2 border-amber-50 py-3 px-6 rounded-md transition"
             >
               {loading ? 'Sending...' : 'Submit'}
             </button>
