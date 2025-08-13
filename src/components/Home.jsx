@@ -3,6 +3,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { FiDownload } from 'react-icons/fi';
 import { Typewriter } from 'react-simple-typewriter';
 import profilePic from "/assets/IMG_20241223_003300.jpg";
+import cv from "../../public/assets/resum.pdf";
 
 export default function HomeSection() {
   return (
@@ -52,7 +53,7 @@ export default function HomeSection() {
       </div>
 
       <a
-        href="/public/assets/resum.pdf"
+        href={cv}
         download="Sayan_Nath_Resume.pdf"
         className="inline-flex items-center gap-2 px-6 py-3 border-2 border-amber-50 text-amber-50 font-medium rounded-md shadow transition"
       >
