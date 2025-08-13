@@ -52,12 +52,13 @@ export default function HomeSection() {
       </div>
 
       <a
-        href=""
-        download
+        href="/public/assets/resum.pdf"
+        download="Sayan_Nath_Resume.pdf"
         className="inline-flex items-center gap-2 px-6 py-3 border-2 border-amber-50 text-amber-50 font-medium rounded-md shadow transition"
       >
         <FiDownload /> Download Resume
       </a>
+
     </section>
   );
 }
